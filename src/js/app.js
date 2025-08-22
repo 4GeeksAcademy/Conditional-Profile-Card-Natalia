@@ -40,27 +40,35 @@ function render(variables = {}) {
     <h3>${variables.city == null ? "Miami" : variables.city}, ${
     variables.country == null ? "USA" : variables.country
   }</h3>
-    <ul class="${variables.socialMediaPosition || "position-right"}">
-      ${
-        variables.twitter
-          ? `<li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>`
-          : ""
-      }
-      ${
-        variables.github
-          ? `<li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>`
-          : ""
-      }
-      ${
-        variables.linkedin
-          ? `<li><a href="https://linkedin.com/in/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>`
-          : ""
-      }
-      ${
-        variables.instagram
-          ? `<li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram"></i></a></li>`
-          : ""
-      }
+       <ul class="${variables.socialMediaPosition || "position-right"}">
+      <li>
+        ${
+          variables.twitter
+            ? `<a href="https://twitter.com/${variables.twitter}" target="_blank"><i class="fab fa-twitter"></i></a>`
+            : `<i class="fab fa-twitter disabled"></i>`
+        }
+      </li>
+      <li>
+        ${
+          variables.github
+            ? `<a href="https://github.com/${variables.github}" target="_blank"><i class="fab fa-github"></i></a>`
+            : `<i class="fab fa-github disabled"></i>`
+        }
+      </li>
+      <li>
+        ${
+          variables.linkedin
+            ? `<a href="https://linkedin.com/in/${variables.linkedin}" target="_blank"><i class="fab fa-linkedin"></i></a>`
+            : `<i class="fab fa-linkedin disabled"></i>`
+        }
+      </li>
+      <li>
+        ${
+          variables.instagram
+            ? `<a href="https://instagram.com/${variables.instagram}" target="_blank"><i class="fab fa-instagram"></i></a>`
+            : `<i class="fab fa-instagram disabled"></i>`
+        }
+      </li>
     </ul>
   </div>`;
 }
